@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Demo.Models.DebtorsTransaction>
+
+@{
+    ViewBag.Title = "Confirm";
+}
+
+<h2>Confirmation</h2>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dashboard", "Index", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Transactions", "Transactions", "DebtorsTransactions", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Buy Stock", "DebtorView", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DebtorMaster.DebtorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockMaster.StockDes)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.SellingPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrossValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VatValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransactionDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Reverse().Take(1))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.LastOrDefault().DebtorMaster.DebtorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.LastOrDefault().StockMaster.StockDes)
+            </td>
+           
+            <td>
+                R @Html.DisplayFor(modelItem => Model.LastOrDefault().SellingPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.LastOrDefault().Qty)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => Model.LastOrDefault().GrossValue)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => Model.LastOrDefault().VatValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.LastOrDefault().TransactionDate)
+            </td>
+            <td>
+
+
+                @Html.ActionLink("Remove Order", "Delete", new { id = item.TransactionID })|
+               
+                @Html.ActionLink("Confirm Order", "Edit", new { id = item.TransactionID })
+            </td>
+        </tr>
+    }
+
+</table>

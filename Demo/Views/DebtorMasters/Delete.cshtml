@@ -1,0 +1,145 @@
+﻿@model Demo.Models.DebtorMaster
+
+@{
+    ViewBag.Title = "Delete";
+}
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dashboard", "Index", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Stock Line", "Create", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Purchase Stock", "Create", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Stock Purchases", "List", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Debtors", "EmployeeAccess", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Debtor", "Create", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Create New Login", "Register", "Home", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+<h2>Remove</h2>
+
+<h3>Are you sure you want to remove this debtor?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DebtorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DebtorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DebtorSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DebtorSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DebtorsAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DebtorsAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Suburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suburb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Town)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Town)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CellNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CellNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+               @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            R  @Html.DisplayFor(model => model.Balance)
+        </dd>
+
+        <dt>
+              @Html.DisplayNameFor(model => model.SalesToDate)
+        </dt>
+
+        <dd>
+            R  @Html.DisplayFor(model => model.SalesToDate)
+        </dd>
+
+        <dt>
+              @Html.DisplayNameFor(model => model.CostToDate)
+        </dt>
+
+        <dd>
+          R @Html.DisplayFor(model => model.CostToDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remove" class="btn btn-default" /> 
+           
+        </div>
+    }
+</div>

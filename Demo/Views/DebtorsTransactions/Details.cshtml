@@ -1,0 +1,82 @@
+﻿@model Demo.Models.DebtorsTransaction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DebtorsTransaction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DebtorMaster.DebtorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DebtorMaster.DebtorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockMaster.StockDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockMaster.StockDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Qty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GrossValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrossValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VatValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VatValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransactionDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TransactionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

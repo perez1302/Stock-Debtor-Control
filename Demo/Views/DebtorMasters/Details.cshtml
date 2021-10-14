@@ -1,0 +1,114 @@
+﻿@model Demo.Models.DebtorMaster
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DebtorMaster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DebtorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DebtorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DebtorSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DebtorSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DebtorsAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DebtorsAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Suburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suburb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Town)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Town)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CellNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CellNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SalesToDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalesToDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostToDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostToDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AccCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

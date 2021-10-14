@@ -1,0 +1,74 @@
+﻿@model Demo.Models.StockTransactionFile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StockTransactionFile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StockMaster.StockDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockMaster.StockDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockTransactionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockTransactionDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StockTransactionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

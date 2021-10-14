@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Successful";
+}
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dashboard", "Index", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Stock Line", "Create", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Purchase Stock", "Create", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Stock Purchases", "List", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Debtors", "EmployeeAccess", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Debtor", "Create", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Create New Login", "Register", "Home", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+<h2>Registration Successful</h2>
+
+<p>
+
+    @Html.ActionLink("Back Home", "Index","StockMasters")
+</p>

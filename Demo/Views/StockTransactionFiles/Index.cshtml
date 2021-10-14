@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Demo.Models.StockTransactionFile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Order Overview</h2>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dashboard", "Index", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Stock Line", "Create", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Purchase Stock", "Create", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Stock Purchases", "List", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Debtors", "EmployeeAccess", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Debtor", "Create", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Create New Login", "Register", "Home", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StockMaster.StockDes)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockTransactionDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Reverse().Take(1))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.LastOrDefault().StockMaster.StockDes)
+            </td>
+           
+            
+            <td>
+                @Html.DisplayFor(modelItem => Model.LastOrDefault().Quantity)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => Model.LastOrDefault().UnitCost)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => Model.LastOrDefault().UnitSP)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => Model.LastOrDefault().Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.LastOrDefault().StockTransactionDate)
+            </td>
+            <td>
+
+
+                @Html.ActionLink("Remove Order", "Delete", new { id = item.StockTransactionID })|
+                @Html.ActionLink("Confirm Order", "Edit", new { id = item.StockTransactionID })
+            </td>
+        </tr>
+    }
+
+</table>

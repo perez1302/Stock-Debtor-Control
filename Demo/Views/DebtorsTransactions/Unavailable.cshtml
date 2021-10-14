@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Unavailable";
+}
+
+<h2>Stock Unavailable</h2>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dashboard", "Index", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Transactions", "Transactions", "DebtorsTransactions", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Buy Stock", "DebtorView", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+@Html.ActionLink("Back", "Create")

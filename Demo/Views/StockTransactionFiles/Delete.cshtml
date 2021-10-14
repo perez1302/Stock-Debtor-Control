@@ -1,0 +1,106 @@
+﻿@model Demo.Models.StockTransactionFile
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Remove Transaction</h2>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dashboard", "Index", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Stock Line", "Create", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Purchase Stock", "Create", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Stock Purchases", "List", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Debtors", "EmployeeAccess", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Debtor", "Create", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Create New Login", "Register", "Home", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+<h3>Are you sure you want to remove this transaction?</h3>
+<div>
+    <h4>StockTransactionFile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StockMaster.StockDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockMaster.StockDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitCost)
+        </dt>
+
+        <dd>
+            R @Html.DisplayFor(model => model.UnitCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitSP)
+        </dt>
+
+        <dd>
+            R @Html.DisplayFor(model => model.UnitSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            R @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockTransactionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockTransactionDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remove" class="btn btn-default" /> 
+            
+        </div>
+    }
+</div>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Demo.Models.StockTransactionFile>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Stock Purchases</h2>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dashboard", "Index", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Stock Line", "Create", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Purchase Stock", "Create", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Stock Purchases", "List", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Debtors", "EmployeeAccess", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Debtor", "Create", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Create New Login", "Register", "Home", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StockMaster.StockDes)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitSP)
+        </th>
+        <th>
+            @Html.ActionLink("Total", "List", new { Sorting_Order = ViewBag.Total })
+        </th>
+        <th>
+            @Html.ActionLink("StockTransactionDate", "List", new { Sorting_Order = ViewBag.StockTransactionDate })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockMaster.StockDes)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            R @Html.DisplayFor(modelItem => item.UnitCost)
+        </td>
+        <td>
+            R @Html.DisplayFor(modelItem => item.UnitSP)
+        </td>
+        <td>
+            R @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockTransactionDate)
+        </td>
+       
+    </tr>
+}
+
+</table>

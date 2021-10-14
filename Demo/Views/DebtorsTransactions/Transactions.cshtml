@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Demo.Models.DebtorsTransaction>
+
+@{
+    ViewBag.Title = "Transactions";
+}
+
+<h2>Transactions</h2>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dashboard", "Index", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Transactions", "Transactions", "DebtorsTransactions", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Buy Stock", "DebtorView", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+<p>
+    @Html.ActionLink("Buy new Stock", "DebtorView","StockMasters")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TransactionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DebtorMaster.DebtorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockMaster.StockDes)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.SellingPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        <th>
+            @Html.ActionLink("GrossValue", "Transactions", new { Sorting_Order = ViewBag.GrossValueSort })
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.VatValue)
+        </th>
+        <th>
+            @Html.ActionLink("TransactionDate", "Transactions", new { Sorting_Order = ViewBag.TransactionDate })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransactionID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DebtorMaster.DebtorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockMaster.StockDes)
+        </td>
+
+        <td>
+         R   @Html.DisplayFor(modelItem => item.SellingPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qty)
+        </td>
+        <td>
+           R @Html.DisplayFor(modelItem => item.GrossValue)
+        </td>
+        <td>
+          R  @Html.DisplayFor(modelItem => item.VatValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransactionDate)
+        </td>
+        <td>
+
+            @Html.ActionLink("Invoice", "Details", new { id = item.TransactionID })
+
+
+        </td>
+    </tr>
+}
+
+</table>

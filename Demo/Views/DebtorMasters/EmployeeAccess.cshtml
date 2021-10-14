@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Demo.Models.DebtorMaster>
+
+@{
+    ViewBag.Title = "EmployeeAccess";
+}
+
+<h2>Company Debtors</h2>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dashboard", "Index", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Stock Line", "Create", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Purchase Stock", "Create", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Stock Purchases", "List", "StockTransactionFiles", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("View Debtors", "EmployeeAccess", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Add New Debtor", "Create", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Create New Login", "Register", "Home", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+<td>
+
+    
+    @Html.ActionLink("Transactions", "Index","DebtorsTransactions")
+
+</td>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DebtorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DebtorSurname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DebtorsAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Suburb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Town)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Province)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CellNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.ActionLink("Balance","EmployeeAccess",new { Sorting_Order = ViewBag.BalanceSort})
+        </th>
+        <th>
+            @Html.ActionLink("SalesToDate", "EmployeeAccess", new { Sorting_Order = ViewBag.SalesToDateSort })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostToDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DebtorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DebtorSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DebtorsAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suburb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Town)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Province)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CellNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => item.Balance)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => item.SalesToDate)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => item.CostToDate)
+            </td>
+            <td>
+                @Html.ActionLink("Payment", "List","DebtorsTransactions")|
+                @Html.ActionLink("Update Details", "Edit", new { id = item.AccCode }) |
+
+                @Html.ActionLink("Remove Debtor", "Delete", new { id = item.AccCode })
+            </td>
+        </tr>
+    }
+
+</table>

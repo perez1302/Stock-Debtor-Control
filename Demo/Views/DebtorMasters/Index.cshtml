@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Demo.Models.DebtorMaster>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dashboard", "Index", "DebtorMasters", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Transactions", "Transactions", "DebtorsTransactions", new { area = "" }, new { @class = "navbar-brand" })|
+                @Html.ActionLink("Buy Stock", "DebtorView", "StockMasters", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccCode)
+        </th>
+        <th>
+            @Html.ActionLink("DebtorName", "Index", new { Sorting_Order = ViewBag.DebtorName })
+        </th>
+        <th>
+            @Html.ActionLink("DebtorSurname","Index",new { Sorting_Order = ViewBag.DebtorSurname})
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DebtorsAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Suburb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Town)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Province)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CellNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesToDate)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DebtorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DebtorSurname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DebtorsAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Suburb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Town)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Province)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CellNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            R  @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+
+        <td>
+            R @Html.DisplayFor(modelItem => item.SalesToDate)
+        </td>
+
+    </tr>
+    }
+
+</table>

@@ -1,0 +1,90 @@
+﻿@model Demo.Models.StockMaster
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StockMaster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StockDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarkUp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarkUp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QtyPurchased)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QtyPurchased)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPurchase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPurchase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QtySold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QtySold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalSales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalSales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockAvailable)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StockCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
